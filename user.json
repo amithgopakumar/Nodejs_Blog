@@ -1,0 +1,21 @@
+[
+    {
+      "name": "Admin User",
+      "email": "admin@example.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "name": "Editor User",
+      "email": "editor@example.com",
+      "password": "editor123",
+      "role": "editor"
+    },
+    {
+      "name": "Regular User",
+      "email": "user@example.com",
+      "password": "user123",
+      "role": "user"
+    }
+  ]
+  

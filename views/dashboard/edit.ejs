@@ -1,0 +1,19 @@
+<h1>Edit Post</h1>
+<form action="/post/edit/<%= post._id %>" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="<%= post.title %>" required>
+
+    <label for="body">Body:</label>
+    <textarea id="body" name="body" required><%= post.body %></textarea>
+
+    <label for="metatitle">Meta Title:</label>
+    <input type="text" id="metatitle" name="metatitle" value="<%= post.metatitle %>">
+
+    <label for="metadescription">Meta Description:</label>
+    <textarea id="metadescription" name="metadescription"><%= post.metadescription %></textarea>
+
+    <label for="keywords">Keywords (comma-separated):</label>
+    <input type="text" id="keywords" name="keywords" value="<%= post.keywords.join(',') %>">
+
+    <button type="submit">Update Post</button>
+</form>

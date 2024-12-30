@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content=<%= locals.title %>>
+    <meta name="description" content="Discover the inspiring journey and achievements of Sachin Tendulkar, the God of Cricket. Learn about his early life, records, and legacy.">
+    <meta name="keywords" content="Sachin Tendulkar, Cricket, God of Cricket, Cricket Records, Indian Cricket, 2011 World Cup, Cricket Legend">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="#">
+    <link rel="stylesheet" href="/css/style.css">
+    <title><%= locals.title %></title>
+</head>
+<body>
+  
+  <div class="container">
+    <%- include('../partials/header.ejs') %>
+    <main>
+      <%- body %>
+    </main>
+    <div class="pagination">
+        <a href="#">&laquo; Previous</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">Next &raquo;</a>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+</div>
+
+
+
+
+
+</body>
+</html>

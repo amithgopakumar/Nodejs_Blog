@@ -1,0 +1,8 @@
+        <h1 class="post-title"><%= post.title %></h1>
+        <p>Published on: <%= post.createdAt.toDateString() %></p>
+        <div class="post-body">
+            <p><%= post.body %></p>
+            <img src="<%= post.featureimage %>" alt="Feature Image">
+        </div>
+        <a href="/" style="text-decoration: none; color: #0066cc;">&larr; Back to Blog</a>
+    

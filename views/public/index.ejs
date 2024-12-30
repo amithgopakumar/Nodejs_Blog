@@ -1,0 +1,11 @@
+<h1>All Things Cricket: Insights, Legends, and Stories</h1>
+<img src="/img/sachin.jpg" alt="Sachin Tendulkar">
+
+<ul class="blog-list">
+     <% data.forEach(element => { %>
+         <li class="blog-item">
+          <h2><a href="/post/<%= element.slug %>"><%= element.title %></a></h2>
+          <p><%= element.createdAt.toDateString() %></p>
+         </li>
+     <% }) %>
+ </ul>

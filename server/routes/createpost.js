@@ -5,6 +5,7 @@ const upload = require('../middlewares/upload');
 const adminLayout = ('../views/layouts/admin');
 const { authenticate } = require('../middlewares/auth'); // Import authenticate middleware
 
+
 // Render post creation form
 router.get('/', authenticate,(req, res) => {
     res.render('dashboard/postcreate', { locals: { title: 'Create a New Post' },layout: adminLayout  });
@@ -13,17 +14,17 @@ router.get('/', authenticate,(req, res) => {
 // Handle form submission
 router.post('/',authenticate, upload.single('featureimage'), async (req, res) => {
     const { title, body, slug, metatitle, metadescription } = req.body;
-
+    const keywords = req.body.keywords || "";  // Define 'keywords' here with a fallback to an empty array
     try {
         const featureImagePath = req.file ? `/img/${req.file.filename}` : null;
         const newPost = new Post({
-            title,
-            body,
-            slug,
-            metatitle,
-            metadescription,
-            keywords,
-            featureimage: featureImagePath,
+              title,
+              body,
+              slug,
+              metatitle,
+              metadescription,
+              keywords,
+              featureimage: featureImagePath,
             
         });
         await newPost.save();

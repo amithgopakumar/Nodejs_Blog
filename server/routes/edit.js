@@ -23,17 +23,18 @@ router.get('/post/edit/:id',authenticate,async (req, res) => {
 router.post('/post/edit/:id', async (req, res) => {
     try {
         const { title, body, metatitle, metadescription, keywords } = req.body;
-
+        // Split keywords by comma and trim any spaces around them
+        const keywordsArray = keywords.split(',').map(keyword => keyword.trim());
         await Post.findByIdAndUpdate(req.params.id, {
             title,
             body,
             metatitle,
             metadescription,
-            keywords: keywords.split(','),
+            keywords: keywordsArray, // Update keywords as an array
             updatedAt: Date.now()
         });
 
-        res.redirect('dashboard/edit');
+        res.redirect('dashboard/listpost');
     } catch (error) {
         console.error("Error updating post:", error);
         res.status(500).send("An error occurred while updating the post.");

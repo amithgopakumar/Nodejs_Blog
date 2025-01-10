@@ -22,6 +22,8 @@ const path = require('path');
 app.use('/img', express.static(path.join(__dirname, 'public/img')));
 
 app.use(cookieParser()); // Use cookie-parser middleware
+
+
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded form data
 app.use(express.json()); // Parse JSON payloads
 

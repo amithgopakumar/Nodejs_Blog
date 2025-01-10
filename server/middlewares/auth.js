@@ -2,8 +2,7 @@ const jwt = require('jsonwebtoken');
 function authenticate(req, res, next) {
     console.log('Cookies:', req.cookies); // Debugging: log cookies
     // Safely access the token
-    const token = req.cookies?.token;
-
+    const token = req.cookies?.token;a
     if (!token) {
         console.log('No token found, redirecting to login.');
         return res.redirect('/login'); // Redirect if no token
@@ -18,8 +17,6 @@ function authenticate(req, res, next) {
         res.redirect('/login'); // Redirect if token invalid
     }
 }
-
-
 function authorize(roles) {
     return (req, res, next) => {
         if (!roles.includes(req.user.role)) {

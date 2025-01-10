@@ -7,7 +7,6 @@ router.get('/posts', async (req, res) => {
     try {
         // Fetch all posts and populate the author's name
         const posts = await Post.find().populate('author', 'name email');
-
         // Send the posts as a JSON response
         res.status(200).json({
             success: true,

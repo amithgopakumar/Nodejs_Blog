@@ -33,7 +33,8 @@ router.get('/post/:slug', async (req, res) => {
 
         const locals = {
             title: post.metatitle,
-            description: post.metadescription
+            description: post.metadescription,
+            keywords:post.keywords
         };
 
         res.render('public/post', { locals, post });
